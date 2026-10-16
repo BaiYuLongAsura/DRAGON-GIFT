@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07172d">
+  <meta name="description" content="A magical Ice Dragon birthday surprise for Luly.">
+
+  <title>Ice Dragon Birthday | Luly</title>
+
+  <!-- App icon: use your generated dragon picture named icon.png -->
+  <link rel="icon" type="image/png" href="./icon.png">
+  <link rel="apple-touch-icon" href="./icon.png">
+  <link rel="manifest" href="./manifest.json">
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+  <div class="star-field" id="starField" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="snow-field" id="snowField" aria-hidden="true"></div>
+  <canvas id="fireworksCanvas" aria-hidden="true"></canvas>
+
+  <audio id="birthdayMusic" src="./birthday-song.mp3" preload="auto" loop></audio>
+
+  <main id="birthdayExperience">
+
+    <!-- SCENE 1: PRESENT -->
+    <section class="scene scene-active" id="presentScene" aria-labelledby="birthdayTitle">
+      <div class="scene-content">
+        <p class="eyebrow">A celestial surprise awaits</p>
+
+        <div class="ornament" aria-hidden="true">✧ ❄ ✧</div>
+
+        <h1 id="birthdayTitle">
+          Happy Birthday,
+          <span class="gold-text">Luly</span>
+        </h1>
+
+        <p class="intro">
+          Beneath the moonlight, a little magic has been prepared just for you.
+        </p>
+
+        <button class="art-button present-button" id="openPresent" type="button"
+                aria-label="Open the birthday present">
+          <img src="./images/present.png"
+               alt="An enchanted icy-blue birthday present guarded by dragons"
+               class="present-art">
+          <span class="sparkle sparkle-one" aria-hidden="true">✦</span>
+          <span class="sparkle sparkle-two" aria-hidden="true">✧</span>
+          <span class="sparkle sparkle-three" aria-hidden="true">✧</span>
+        </button>
+
+        <p class="hint" id="presentHint">Tap the present to begin your journey ✨</p>
+      </div>
+    </section>
+
+    <!-- SCENE 2: CAKE -->
+    <section class="scene" id="cakeScene" aria-labelledby="cakeTitle" hidden>
+      <div class="scene-content">
+        <p class="eyebrow">A wish beneath the stars</p>
+        <div class="ornament" aria-hidden="true">✧ ♡ ✧</div>
+
+        <h2 id="cakeTitle">Make a Wish</h2>
+
+        <p class="intro">
+          Close your eyes for a moment, make a wish, and let the magic begin.
+        </p>
+
+        <button class="art-button cake-button" id="makeWish" type="button"
+                aria-label="Make your birthday wish">
+          <img src="./images/cake.png"
+               alt="A magical white and icy-blue birthday cake for Luly"
+               class="cake-art">
+          <span class="cake-glow" aria-hidden="true"></span>
+        </button>
+
+        <p class="hint" id="wishHint">Tap the cake when your wish is ready ✨</p>
+      </div>
+    </section>
+
+    <!-- SCENE 3: FIVE MEMORIES -->
+    <section class="scene" id="memoriesScene" aria-labelledby="memoriesTitle" hidden>
+      <div class="scene-content memories-content">
+        <p class="eyebrow">Little moments, forever treasured</p>
+        <h2 id="memoriesTitle">Our Beautiful Memories</h2>
+
+        <div class="memory-frame" id="memoryFrame">
+          <img id="memoryImage" src="./images/photo1.jpg"
+               alt="A special memory" class="memory-image">
+          <div class="memory-glimmer" aria-hidden="true"></div>
+        </div>
+
+        <p class="memory-counter" id="memoryCounter">Memory 1 of 5</p>
+        <p class="hint" id="memoryCaption">Every memory holds a little piece of magic.</p>
+      </div>
+    </section>
+
+    <!-- SCENE 4: FLOATING ENVELOPE -->
+    <section class="scene" id="mailScene" aria-labelledby="mailTitle" hidden>
+      <div class="scene-content">
+        <p class="eyebrow">Something from the heart</p>
+        <h2 id="mailTitle">A Little Letter for You</h2>
+
+        <p class="intro">
+          There is one more little surprise waiting beneath the moonlight.
+        </p>
+
+        <button class="art-button mail-button" id="openMail" type="button"
+                aria-label="Open the birthday letter">
+          <img src="./images/mail.png"
+               alt="An enchanted white and icy-blue envelope with golden details"
+               class="mail-art">
+          <span class="mail-aura" aria-hidden="true"></span>
+        </button>
+
+        <p class="hint">Tap the floating envelope to open your letter 💌</p>
+      </div>
+    </section>
+
+    <!-- SCENE 5: LETTER -->
+    <section class="scene" id="letterScene" aria-labelledby="letterTitle" hidden>
+      <article class="letter-paper" id="letterPaper">
+        <div class="letter-decoration" aria-hidden="true">❄ ✧ ❄</div>
+        <p class="eyebrow">Written beneath the moonlight</p>
+        <h2 id="letterTitle">For You, Luly ♡</h2>
+        <div class="letter-divider" aria-hidden="true">✧ ── ♡ ── ✧</div>
+
+        <div class="letter-message">
+          <p>
+            On your special day, I hope the world gives you a thousand reasons
+            to smile and the courage to follow every dream your heart holds.
+          </p>
+
+          <p>
+            May your days be filled with warmth, your nights with peaceful
+            dreams, and your future with beautiful surprises you never imagined.
+          </p>
+
+          <p>
+            Like a dragon guarding a precious treasure, may you always be
+            surrounded by kindness, loyalty, and people who truly care about you.
+          </p>
+
+          <p>
+            Never forget how special you are. May this new chapter bring you
+            happiness, wonderful memories, and wishes that slowly come true.
+          </p>
+        </div>
+
+        <p class="letter-signature">With warm wishes, always ♡</p>
+        <p class="letter-footnote">A little magic, made especially for you.</p>
+      </article>
+
+      <p class="hint letter-hint">Keep this little moment close to your heart ✨</p>
+    </section>
+
+    <!-- SCENE 6: FINAL GALLERY -->
+    <section class="scene" id="galleryScene" aria-labelledby="galleryTitle" hidden>
+      <div class="scene-content gallery-content">
+        <p class="eyebrow">A little collection of magic</p>
+        <h2 id="galleryTitle">Memories to Keep Forever</h2>
+        <p class="intro">Five little moments, one beautiful celebration.</p>
+
+        <div class="final-gallery" id="finalGallery">
+          <img src="./images/photo1.jpg" alt="Birthday memory 1">
+          <img src="./images/photo2.jpg" alt="Birthday memory 2">
+          <img src="./images/photo3.jpg" alt="Birthday memory 3">
+          <img src="./images/photo4.jpg" alt="Birthday memory 4">
+          <img src="./images/photo5.jpg" alt="Birthday memory 5">
+        </div>
+
+        <p class="gallery-message">May your next chapter be full of wonder ♡</p>
+
+        <button class="replay-button" id="replayExperience" type="button">
+          Experience the Magic Again ✨
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="music-indicator" id="musicIndicator" aria-live="polite">
+    ♫ Birthday music
+  </div>
+</body>
+</html>
